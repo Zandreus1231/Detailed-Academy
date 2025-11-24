@@ -1,0 +1,429 @@
+/* ================================
+   COACHES PAGE STYLING
+   Simple dark premium theme
+   Matches homepage design
+================================ */
+
+/* Page wrapper */
+.page-coaches {
+  font-family: 'Roboto', sans-serif;
+  background: #121212;
+  color: #e6e6e6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------
+   HERO (Simple dark + textured gradient)
+----------------------------------- */
+.page-coaches .coaches-hero {
+  padding: 90px 20px 60px;
+  text-align: center;
+  background: linear-gradient(
+      180deg,
+      rgba(20, 20, 20, 1) 0%,
+      rgba(17, 17, 17, 0.92) 40%,
+      rgba(15, 15, 15, 0.88) 100%
+  );
+  border-bottom: 1px solid #2b2b2b;
+}
+
+.page-coaches .section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 46px;
+  color: #f0e6d2;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 10px rgba(255, 167, 38, 0.1);
+}
+
+.page-coaches .hero-desc {
+  max-width: 850px;
+  margin: 0 auto;
+  color: #d4cfc7;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------
+   COACH CATEGORY
+----------------------------------- */
+.category {
+  margin: 50px auto;
+  padding: 0 16px;
+  max-width: 1200px;
+}
+
+.category h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  color: #f0e6d2;
+  text-align: center;
+  margin-bottom: 22px;
+  letter-spacing: 0.5px;
+}
+
+/* --------------------------------
+   COACH GRID — CENTERED & RESPONSIVE
+----------------------------------- */
+.coaches-grid {
+  display: grid;
+  gap: 32px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* --------------------------------
+   COACH CARD
+----------------------------------- */
+.coach-card {
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 16px;
+  padding: 22px;
+  text-align: center;
+  box-shadow:
+    0 0 25px rgba(240, 166, 76, 0.15),
+    0 10px 25px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease;
+}
+
+.coach-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 0 35px rgba(240, 166, 76, 0.25),
+    0 12px 36px rgba(0, 0, 0, 0.65);
+}
+
+/* Coach Images */
+.img-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.coach-card img {
+  width: 160px;
+  height: 160px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+  transition: 0.3s ease;
+}
+
+.coach-card:hover img {
+  transform: scale(1.06);
+}
+
+/* Text */
+.coach-name {
+  font-family: 'Cinzel', serif;
+  color: #f0e6d2;
+  font-size: 1.2rem;
+  margin: 8px 0;
+}
+
+.role {
+  color: #cfc9c1;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.bio {
+  font-size: 0.96rem;
+  color: #d9d9d9;
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+
+.coach-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px;
+  text-align: left;
+  color: #eee;
+  font-size: 0.9rem;
+}
+
+.coach-meta li {
+  margin-bottom: 6px;
+}
+
+/* Buttons */
+.btn-more {
+  background: #ffa726;
+  color: #1a1a1a;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.btn-more:hover {
+  background: #ff9800;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------
+   MODAL (kept simple and clean)
+----------------------------------- */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.75);
+  padding: 20px;
+}
+
+.modal[aria-hidden="false"] {
+  display: flex;
+}
+
+.modal-panel {
+  background: #181818;
+  padding: 22px;
+  border-radius: 14px;
+  max-width: 850px;
+  width: 100%;
+  box-shadow: 0 0 35px rgba(0,0,0,0.8);
+}
+
+.modal-body {
+  display: flex;
+  gap: 20px;
+}
+
+.modal-image img {
+  width: 220px;
+  height: 220px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.modal-name {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: #f0e6d2;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 30px;
+  background: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coaches | Detailed Academy</title>
+
+  <!-- Main Theme -->
+  <link rel="stylesheet" href="homepage.css" />
+  <link rel="stylesheet" href="coaches.css" />
+</head>
+
+<body class="page-coaches">
+
+<!-- HEADER (exactly like homepage) -->
+<header>
+  <nav class="mainNav">
+    <a href="index.html" class="logo">Detailed Academy</a>
+    <div class="nav-right">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="coaches.html" class="active">Coaches</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+
+      <div class="user-dropdown">
+        <img src="images/user.png" class="user-icon">
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="coaches-hero">
+  <div class="container">
+    <h1 class="section-title">Meet Our Coaches</h1>
+    <p class="hero-desc">Our coaching staff brings elite player development, decades of experience, and program-specific specialization.</p>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main>
+
+<!-- CATEGORY 1 -->
+<div class="category">
+  <h2>Serious Hoopers Master Program</h2>
+  <div class="coaches-grid">
+
+    <!-- Marcus -->
+    <article class="coach-card">
+      <div class="img-wrap">
+        <img src="images/coach1.jpg" alt="Marcus">
+      </div>
+      <h3 class="coach-name">Marcus Rivera</h3>
+      <p class="role">Head Coach & Director of Development</p>
+      <p class="bio">15+ years coaching elite athletes with focus on shooting mechanics, footwork, and pro-level player development.</p>
+      <ul class="coach-meta">
+        <li><strong>Specialty:</strong> Shooting, Footwork</li>
+      </ul>
+      <button class="btn-more">View Full Bio</button>
+    </article>
+
+    <!-- Ken -->
+    <article class="coach-card">
+      <div class="img-wrap">
+        <img src="images/coach6.jpg" alt="Ken">
+      </div>
+      <h3 class="coach-name">Ken Morales</h3>
+      <p class="role">Bigs Coach</p>
+      <p class="bio">Specializes in post moves, interior defense and modern big-man offensive techniques.</p>
+      <ul class="coach-meta">
+        <li><strong>Specialty:</strong> Post Work, Strength</li>
+      </ul>
+      <button class="btn-more">View Full Bio</button>
+    </article>
+
+  </div>
+</div>
+
+<!-- CATEGORY 2 -->
+<div class="category">
+  <h2>Beginners Camp</h2>
+  <div class="coaches-grid">
+
+    <!-- Lena -->
+    <article class="coach-card">
+      <div class="img-wrap">
+        <img src="images/coach2.jpg" alt="Lena">
+      </div>
+      <h3 class="coach-name">Lena Cruz</h3>
+      <p class="role">Youth Skills Coach</p>
+      <p class="bio">Builds player fundamentals & confidence through structured youth drills.</p>
+      <ul class="coach-meta">
+        <li><strong>Specialty:</strong> Ball Handling, Footwork</li>
+      </ul>
+      <button class="btn-more">View Full Bio</button>
+    </article>
+
+    <!-- Maya -->
+    <article class="coach-card">
+      <div class="img-wrap">
+        <img src="images/coach7.jpg" alt="Maya">
+      </div>
+      <h3 class="coach-name">Maya Reyes</h3>
+      <p class="role">Youth & Mental Skills</p>
+      <p class="bio">Focuses on confidence-building and foundational skills for young athletes.</p>
+      <ul class="coach-meta">
+        <li><strong>Specialty:</strong> Youth Development</li>
+      </ul>
+      <button class="btn-more">View Full Bio</button>
+    </article>
+
+  </div>
+</div>
+
+<!-- CATEGORY 3 -->
+<div class="category">
+  <h2>Adult Camp</h2>
+  <div class="coaches-grid">
+
+    <!-- Tyler -->
+    <article class="coach-card">
+      <div class="img-wrap">
+        <img src="images/coach4.jpg" alt="Tyler">
+      </div>
+      <h3 class="coach-name">Tyler Miles</h3>
+      <p class="role">Strength & Conditioning</p>
+      <p class="bio">Develops mobility and strength programs tailored for adult athletes.</p>
+      <ul class="coach-meta">
+        <li><strong>Specialty:</strong> Mobility, Conditioning</li>
+      </ul>
+      <button class="btn-more">View Full Bio</button>
+    </article>
+
+    <!-- Andre -->
+    <article class="coach-card">
+      <div class="img-wrap">
+        <img src="images/coach8.jpg" alt="Andre">
+      </div>
+      <h3 class="coach-name">Andre Santos</h3>
+      <p class="role">Analytics Coach</p>
+      <p class="bio">Uses measurable data and video analysis to improve skill progression.</p>
+      <ul class="coach-meta">
+        <li><strong>Specialty:</strong> Film, Data Analytics</li>
+      </ul>
+      <button class="btn-more">View Full Bio</button>
+    </article>
+
+  </div>
+</div>
+
+<!-- CATEGORY 4 -->
+<div class="category">
+  <h2>Elite Course</h2>
+  <div class="coaches-grid">
+
+    <!-- Justin -->
+    <article class="coach-card">
+      <div class="img-wrap">
+        <img src="images/coach3.jpg" alt="Justin">
+      </div>
+      <h3 class="coach-name">Justin Park</h3>
+      <p class="role">Tactical Coach</p>
+      <p class="bio">Specializes in defensive schemes and game IQ training.</p>
+      <ul class="coach-meta">
+        <li><strong>Specialty:</strong> Film Breakdown</li>
+      </ul>
+      <button class="btn-more">View Full Bio</button>
+    </article>
+
+    <!-- Isabel -->
+    <article class="coach-card">
+      <div class="img-wrap">
+        <img src="images/coach5.jpg" alt="Isabel">
+      </div>
+      <h3 class="coach-name">Isabel Santos</h3>
+      <p class="role">Shooting Coach</p>
+      <p class="bio">Improves perimeter shooting and dynamic guard creation.</p>
+      <ul class="coach-meta">
+        <li><strong>Specialty:</strong> Shooting, Guards</li>
+      </ul>
+      <button class="btn-more">View Full Bio</button>
+    </article>
+
+  </div>
+</div>
+
+</main>
+
+<!-- FOOTER (same as homepage) -->
+<footer class="section-4">
+  <div class="about-container">
+    <h2 class="about-title">DETAILED ACADEMY</h2>
+    <div class="about-details-container">
+      <p>2025 Intramuros, Manila</p>
+      <p>+63 9123456789</p>
+      <p>detailedacademy@gmail.com</p>
+    </div>
+    <div class="divider"></div>
+    <a href="about.html" class="about-link">Learn more about us</a>
+    <p class="footer-text">&copy; 2025 Detailed Academy. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
